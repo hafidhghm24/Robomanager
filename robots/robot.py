@@ -1,10 +1,10 @@
 import random
 from config import *
-from carte import carte
 
 class Robot:
-    def __init__(self, identifiant: int):
+    def __init__(self, identifiant: int, carte: list[list[int]]):
         self.id = identifiant
+        self.carte = carte
         self.x = BASE_POSITION[0]
         self.y = BASE_POSITION[1]
         self.batterie = BATTERIE
@@ -12,7 +12,7 @@ class Robot:
 
     def deplacement(self):
         for _ in range(TOUR_MAX):
-            temperature = carte[self.y][self.x]
+            temperature = self.carte[self.y][self.x]
 
             if self.batterie <= 5:
                 print(f"🟥 Robot {self.id} : Batterie critique. Robot éteint.")

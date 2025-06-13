@@ -1,4 +1,3 @@
-import random
 from robots.robot import Robot  # ✅ pas de /, majuscule au nom de classe
 from carte import creation_map
 from config import *
