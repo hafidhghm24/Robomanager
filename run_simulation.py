@@ -27,8 +27,9 @@ def run_simulation():
 
     fig, ax = plt.subplots(figsize=(6, 6))
     ax.imshow(np.array(world), cmap=cmap, norm=norm)
-    ax.scatter([BASE_X], [BASE_Y], c="black", marker="s", s=100, label="Base")
-    robot_plot = ax.scatter([], [], s=80, marker="o", label="Robot")
+    # show the base using a house emoji for better visibility
+    ax.text(BASE_X, BASE_Y, "\U0001F3E0", fontsize=16, ha="center", va="center")
+    robot_plot = ax.scatter([], [], s=120, marker="o", label="Robot")
 
     ax.set_xticks(range(MAP_L))
     ax.set_yticks(range(MAP_H))
