@@ -9,3 +9,4 @@ BASE_POS = (BASE_X, BASE_Y)
 TICK_LIMIT = 100
 GIF_NAME = "simulation.gif"
 RECHARGE = 5
+DATA_DIR = "data"

@@ -12,6 +12,7 @@ from config import (
     MAP_L,
     MAP_H,
     RECHARGE,
+    DATA_DIR,
 )
 
 
@@ -64,8 +65,9 @@ class Robot:
         return True
 
     def save_csv(self) -> None:
-        os.makedirs("data", exist_ok=True)
-        with open(f"data/robot_{self.id}.csv", "w", newline="", encoding="utf-8") as f:
+        os.makedirs(DATA_DIR, exist_ok=True)
+        path = os.path.join(DATA_DIR, f"robot_{self.id}.csv")
+        with open(path, "w", newline="", encoding="utf-8") as f:
             writer = csv.writer(f)
             writer.writerow(["datetime", "temperature", "battery"])
             for dt, temp, bat in self.logs:
