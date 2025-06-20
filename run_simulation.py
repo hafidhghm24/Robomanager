@@ -2,7 +2,7 @@ from robots.robot import Robot  # ✅ pas de /, majuscule au nom de classe
 from carte import creation_map
 from config import *
 
-def main():
+def run_simulation():
     # 🗺️ Création de la carte
     carte = creation_map(MAP_H, MAP_L)
 
@@ -22,4 +22,4 @@ def main():
         print(ligne)
 
 if __name__ == "__main__":
-    main()
+    run_simulation()
